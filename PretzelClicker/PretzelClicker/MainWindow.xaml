@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PretzelClicker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="471.733" Width="821.733" Loaded="WinMain_Loaded">
+        Title="MainWindow" Height="471.733" Width="821.733" Loaded="WinMain_Loaded" Background="#FF00528B">
     <Grid>
         <Button x:Name="btnPlay" Content="Spielen" Margin="0,0,0,130" VerticalAlignment="Bottom" Width="100" Height="50" HorizontalAlignment="Center" Click="BtnPlay_Click" Visibility="Hidden">
             <Button.Background>
@@ -26,12 +26,26 @@
             </Button.Background>
         </Button>
         <Button x:Name="btnExit" Content="Exit" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="100" Height="50" HorizontalAlignment="Center" Foreground="White" Background="#FF0B3629" Visibility="Hidden"/>
-        <Button x:Name="btnClickField" Content="" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="597" Height="422" Opacity="0" Click="BtnClickField_Click" Cursor="Wait"/>
-        <Label x:Name="lblScore" Content="Score: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="192" AutomationProperties.IsColumnHeader="True" FontSize="16">
+        <Button x:Name="btnClickField" Content="" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="597" Height="422" Opacity="0" Click="BtnClickField_Click" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblPretzel" Content="Pretzel: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="41" Width="192" AutomationProperties.IsColumnHeader="True" FontSize="24" FontFamily="Showcard Gothic">
             <Label.BindingGroup>
                 <BindingGroup/>
             </Label.BindingGroup>
         </Label>
+        <Grid HorizontalAlignment="Left" Height="375" Margin="10,56,0,0" VerticalAlignment="Top" Width="192" Grid.Row="5" Grid.RowSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="62*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnGrandma" Content="Grandma" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" FontFamily="Showcard Gothic" FontSize="24" Background="#FFD11818" Height="58" Click="BtnGrandma_Click"/>
+            <Button x:Name="btnCafeteria" Content="Cafeteria" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" FontFamily="Showcard Gothic" FontSize="24" Background="#FFD11818" Margin="0,9.005,0,0" Height="58" Grid.Row="1"/>
+            <Button x:Name="btnBakery" Content="Bakery" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" FontFamily="Showcard Gothic" FontSize="24" Background="#FFD11818" Margin="0,85.005,0,0" Height="58" Grid.Row="1"/>
+            <Button x:Name="btnFactory" Content="Factory" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" FontFamily="Showcard Gothic" FontSize="24" Background="#FFD11818" Margin="0,160.005,0,0" Height="58" Grid.Row="1"/>
+        </Grid>
 
     </Grid>
 </Window>
