@@ -20,7 +20,7 @@ namespace PretzelClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int Score = 0;
+        public int Pretzel = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -51,23 +51,23 @@ namespace PretzelClicker
         private void ShowGame()
         {
             btnClickField.Visibility = Visibility.Visible;
-            lblScore.Visibility = Visibility.Visible;
+            lblPretzel.Visibility = Visibility.Visible;
         }
 
         private void HideGame()
         {
             btnClickField.Visibility = Visibility.Hidden;
-            lblScore.Visibility = Visibility.Hidden;
+            lblPretzel.Visibility = Visibility.Hidden;
         }
 
         private void UpdateScore()
         {
-            lblScore.Content = "Score: " + Score;
+            lblPretzel.Content = "Pretzel: " + Pretzel;
         }
 
         private void BtnClickField_Click(object sender, RoutedEventArgs e)
         {
-            Score++;
+            Pretzel++;
             UpdateScore();
         }
 
@@ -75,6 +75,12 @@ namespace PretzelClicker
         {
             ShowMainMenu();
             HideGame();
+        }
+
+        private void BtnGrandma_Click(object sender, RoutedEventArgs e)
+        {
+            Pretzel = Pretzel + 2;
+            UpdateScore();
         }
 
         private void LoadSettings()
