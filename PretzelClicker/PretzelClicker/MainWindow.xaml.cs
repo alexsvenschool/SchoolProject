@@ -76,5 +76,20 @@ namespace PretzelClicker
             ShowMainMenu();
             HideGame();
         }
+
+        private void LoadSettings()
+        {
+            Score = Properties.Settings.Default.Score;
+        }
+
+        private void CloseGame()
+        {
+            Properties.Settings.Default.Score = Score;
+        }
+
+        private void WinMain_Closed(object sender, EventArgs e)
+        {
+            CloseGame();
+        }
     }
 }
