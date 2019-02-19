@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace PretzelClicker
 {
@@ -20,6 +21,8 @@ namespace PretzelClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        SoundPlayer player = new SoundPlayer("Background_music.wav");
+
         public int Pretzel = 0;
         public MainWindow()
         {
@@ -75,6 +78,8 @@ namespace PretzelClicker
         {
             ShowMainMenu();
             HideGame();
+            player.PlayLooping();
+            //player.Play();
         }
 
         private void BtnGrandma_Click(object sender, RoutedEventArgs e)
@@ -85,12 +90,12 @@ namespace PretzelClicker
 
         private void LoadSettings()
         {
-            Score = Properties.Settings.Default.Score;
+            //Pretzel = Properties.Settings.Default.Pretzel;
         }
 
         private void CloseGame()
         {
-            Properties.Settings.Default.Score = Score;
+            //Properties.Settings.Default.Pretzel = Pretzel;
         }
 
         private void WinMain_Closed(object sender, EventArgs e)
