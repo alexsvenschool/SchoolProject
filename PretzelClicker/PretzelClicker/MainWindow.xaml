@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PretzelClicker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="471.733" Width="821.733" Loaded="WinMain_Loaded" Closed="WinMain_Closed">
+        Title="Pretzel Clicker" Height="471.733" Width="821.733" Loaded="WinMain_Loaded" Closed="WinMain_Closed" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnPlay" Content="Spielen" Margin="0,0,0,130" VerticalAlignment="Bottom" Width="100" Height="50" HorizontalAlignment="Center" Click="BtnPlay_Click" Visibility="Hidden">
             <Button.Background>
@@ -26,7 +26,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btnExit" Content="Exit" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="100" Height="50" HorizontalAlignment="Center" Foreground="White" Background="#FF0B3629" Visibility="Hidden"/>
-        <Button x:Name="btnClickField" Content="" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="597" Height="422" Opacity="0" Click="BtnClickField_Click" Cursor="Hand">
+        <Button x:Name="btnClickField" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="597" Height="422" Opacity="0" Click="BtnClickField_Click" Cursor="Hand">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
