@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Media;
 
 namespace PretzelClicker
@@ -21,7 +9,7 @@ namespace PretzelClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        SoundPlayer player = new SoundPlayer("Background_music.wav");//Background music
+        SoundPlayer player = new SoundPlayer("Sounds/background_music.wav");//Background music
 
         public int Pretzel = 0;
 
@@ -95,7 +83,7 @@ namespace PretzelClicker
         private void CloseGame()
         {
             //Properties.Settings.Default.Pretzel = Pretzel;
-            //Application.Exit();
+            
         }
 
         private void WinMain_Closed(object sender, EventArgs e)

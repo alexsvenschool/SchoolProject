@@ -28,7 +28,7 @@
         <Button x:Name="btnExit" Content="Exit" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="100" Height="50" HorizontalAlignment="Center" Foreground="White" Background="#FF0B3629" Visibility="Hidden"/>
         <Button x:Name="btnClickField" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="597" Height="422" Opacity="0" Click="BtnClickField_Click" Cursor="Hand">
             <Button.Background>
-                <ImageBrush/>
+                <ImageBrush ImageSource="Images/background.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="lblPretzel" Content="Pretzel: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="41" Width="192" AutomationProperties.IsColumnHeader="True" FontSize="24" FontFamily="Showcard Gothic">
