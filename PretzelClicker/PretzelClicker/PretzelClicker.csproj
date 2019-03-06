@@ -88,6 +88,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pretzel.cs" />
+    <Compile Include="PretzelUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

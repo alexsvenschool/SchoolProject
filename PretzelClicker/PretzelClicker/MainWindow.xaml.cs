@@ -10,9 +10,7 @@ namespace PretzelClicker
     public partial class MainWindow : Window
     {
         SoundPlayer player = new SoundPlayer("Sounds/background_music.wav");//Background music
-
-        public int Pretzel = 0;
-
+        Pretzel p;
         public MainWindow()
         {
             InitializeComponent();
@@ -53,12 +51,12 @@ namespace PretzelClicker
 
         private void UpdateScore()
         {
-            lblPretzel.Content = "Pretzel: " + Pretzel;
+            lblPretzel.Content = "Pretzel: " + p.pretzel;
         }//end UpdateScore
 
         private void BtnClickField_Click(object sender, RoutedEventArgs e)
         {
-            Pretzel++;
+            p.pretzel += p.pretzel_pro_click;
             UpdateScore();
         }//end BtnClickField_Click
 
@@ -66,14 +64,32 @@ namespace PretzelClicker
         {
             ShowMainMenu();
             HideGame();
-            player.PlayLooping(); //Loop background_music
+            //player.PlayLooping(); //Loop background_music
         }//end WinMain_Loaded
 
         private void BtnGrandma_Click(object sender, RoutedEventArgs e)
         {
-            Pretzel = Pretzel + 2;
+            p.pretzel_pro_click += 1;
             UpdateScore();
         }//end BtnGrandma_Click
+
+        private void BtnCafeteria_Click(object sender, RoutedEventArgs e)
+        {
+            p.pretzel_pro_click += 9;
+            UpdateScore();
+        }
+
+        private void BtnBakery_Click(object sender, RoutedEventArgs e)
+        {
+            p.pretzel_pro_click += 99;
+            UpdateScore();
+        }
+
+        private void BtnFactory_Click(object sender, RoutedEventArgs e)
+        {
+            p.pretzel_pro_click += 999;
+            UpdateScore();
+        }
 
         private void LoadSettings()
         {
