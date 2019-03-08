@@ -129,8 +129,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Images\background.png" />
-    <Resource Include="Images\btnPretzel_background.jpg" />
+    <Resource Include="Images\Background.jpg" />
+    <Resource Include="Images\Bretzel.png" />
     <Content Include="Sounds\background_music.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
