@@ -10,7 +10,9 @@ namespace PretzelClicker
     public partial class MainWindow : Window
     {
         SoundPlayer player = new SoundPlayer("Sounds/background_music.wav");//Background music
-        Pretzel p;
+        Pretzel Pretzel = new Pretzel();
+        PretzelUpdate PretzelUpdate = new PretzelUpdate();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,24 +43,49 @@ namespace PretzelClicker
         {
             btnClickField.Visibility = Visibility.Visible;
             lblPretzel.Visibility = Visibility.Visible;
+            lblPretzelProClick.Visibility = Visibility.Visible;
         }//end ShowGame
 
         private void HideGame()
         {
             btnClickField.Visibility = Visibility.Hidden;
             lblPretzel.Visibility = Visibility.Hidden;
+            lblPretzelProClick.Visibility = Visibility.Hidden;
         }//end HideGame
-
-        private void UpdateScore()
-        {
-            lblPretzel.Content = "Pretzel: " + p.pretzel;
-        }//end UpdateScore
 
         private void BtnClickField_Click(object sender, RoutedEventArgs e)
         {
-            p.pretzel += p.pretzel_pro_click;
-            UpdateScore();
+            lblPretzel.Content = PretzelUpdate.UpdatePretzelScore(Pretzel.Clicked());
         }//end BtnClickField_Click
+
+  
+        private void BtnAutoClick(object sender, RoutedEventArgs e)
+        {
+
+        }//end BtnAutoClicker
+        private void BtnGrandma_Click(object sender, RoutedEventArgs e)
+        {
+            Pretzel.pretzel_pro_click = PretzelUpdate.Update(Pretzel, 1, 10);
+            lblPretzelProClick.Content = PretzelUpdate.UpdatePretzelProClick(Pretzel.pretzel_pro_click);
+        }//end BtnGrandma_Click
+
+        private void BtnCafeteria_Click(object sender, RoutedEventArgs e)
+        {
+            Pretzel.pretzel_pro_click = PretzelUpdate.Update(Pretzel, 9 ,10);
+            lblPretzelProClick.Content = PretzelUpdate.UpdatePretzelProClick(Pretzel.pretzel_pro_click);
+        }//end BtnCafeteria_Click
+
+        private void BtnBakery_Click(object sender, RoutedEventArgs e)
+        {
+            Pretzel.pretzel_pro_click = PretzelUpdate.Update(Pretzel, 99,10);
+            lblPretzelProClick.Content = PretzelUpdate.UpdatePretzelProClick(Pretzel.pretzel_pro_click);
+        }//end BtnBakery_Click
+
+        private void BtnFactory_Click(object sender, RoutedEventArgs e)
+        {
+            Pretzel.pretzel_pro_click = PretzelUpdate.Update(Pretzel, 999,10);
+            lblPretzelProClick.Content = PretzelUpdate.UpdatePretzelProClick(Pretzel.pretzel_pro_click);
+        }//end BtnFactory_Click
 
         private void WinMain_Loaded(object sender, RoutedEventArgs e)
         {
@@ -66,30 +93,6 @@ namespace PretzelClicker
             HideGame();
             //player.PlayLooping(); //Loop background_music
         }//end WinMain_Loaded
-
-        private void BtnGrandma_Click(object sender, RoutedEventArgs e)
-        {
-            p.pretzel_pro_click += 1;
-            UpdateScore();
-        }//end BtnGrandma_Click
-
-        private void BtnCafeteria_Click(object sender, RoutedEventArgs e)
-        {
-            p.pretzel_pro_click += 9;
-            UpdateScore();
-        }
-
-        private void BtnBakery_Click(object sender, RoutedEventArgs e)
-        {
-            p.pretzel_pro_click += 99;
-            UpdateScore();
-        }
-
-        private void BtnFactory_Click(object sender, RoutedEventArgs e)
-        {
-            p.pretzel_pro_click += 999;
-            UpdateScore();
-        }
 
         private void LoadSettings()
         {

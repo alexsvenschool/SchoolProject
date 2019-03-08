@@ -8,29 +8,36 @@ namespace PretzelClicker
 {
     class PretzelUpdate
     {
-        public Pretzel Score;
-        public float UpgradeKosten;
-        private float NeueKosten;
+        public double UpgradeKosten;
+        public double NeueKosten;
         
-        void Update()
+        public double Update(Pretzel Pretzel, double upgrade_wert,double costs)
         {
-            
+            if (Pretzel.pretzel > costs)
+            {
+                Pretzel.pretzel -= costs;
+                Pretzel.pretzel_pro_click += upgrade_wert;
+                return Pretzel.pretzel_pro_click;
+            }
+            else
+            {
+                return Pretzel.pretzel_pro_click;
+            }
         }
-        //public void Grandma(Pretzel p)
-        //{
-        //    p.pretzel_pro_click += 1;
-        //}
-        //public void Cafeteria(Pretzel p)
-        //{
-        //    p.pretzel_pro_click += 9;
-        //}
-        //public void Bakery(Pretzel p)
-        //{
-        //    p.pretzel_pro_click += 99;
-        //}
-        //public void Factory(Pretzel p)
-        //{
-        //    p.pretzel_pro_click += 999;
-        //}
+        public double CalculateCosts()
+        {
+            return  NeueKosten * 1.5 ;
+        }
+
+        public string UpdatePretzelScore(double pretzel )
+        {
+            return "Pretzel: " + pretzel;
+        }
+
+        public string UpdatePretzelProClick(double pretzel_pro_click)
+        {
+            return "Pretzel_Pro_Click: " + pretzel_pro_click;
+        }
+
     }
 }

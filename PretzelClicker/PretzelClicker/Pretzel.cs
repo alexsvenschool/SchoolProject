@@ -8,12 +8,13 @@ namespace PretzelClicker
 {
     class Pretzel
     {
-        public int pretzel = 0;
-        public int pretzel_pro_click = 1;
+        public double pretzel = 0;
+        public double pretzel_pro_click = 1;
 
-        public void Clicked()
+        public double Clicked()
         {
             pretzel += pretzel_pro_click;
+            return pretzel;
         }
     }
 
