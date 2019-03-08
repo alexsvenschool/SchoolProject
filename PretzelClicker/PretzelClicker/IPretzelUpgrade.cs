@@ -1,0 +1,8 @@
+﻿namespace PretzelClicker
+{
+    interface IPretzelUpgrade
+    {
+        
+
+    }
+}
