@@ -136,7 +136,11 @@
   <ItemGroup>
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\Bretzel.png" />
-    <Content Include="Sounds\background_music.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sounds\background_music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

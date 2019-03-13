@@ -11,7 +11,8 @@ namespace PretzelClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        SoundPlayer player = new SoundPlayer("Sounds/background_music.wav");//Background music
+        SoundPlayer player = new SoundPlayer(@"Sounds/background_music.wav");//Background music
+        
         Pretzel Pretzel = new Pretzel();
         PretzelUpdate PretzelUpdate = new PretzelUpdate();
         List<AutoClicker> lstAutoClicker = new List<AutoClicker>();
@@ -19,6 +20,8 @@ namespace PretzelClicker
         public MainWindow()
         {
             InitializeComponent();
+            player.Play();
+            player.Play();//Play the background music
             RefreshAutoPretzel();
             RefreshCosts();
         }
