@@ -77,7 +77,7 @@ namespace PretzelClicker
 
         public void RefreshCosts()
         {
-            lblAutoClickerCosts.Content = lstAutoClicker[lstAutoClicker.Count - 1].Costs();
+            //lblAutoClickerCosts.Content = lstAutoClicker[lstAutoClicker.Count - 1].Costs();
         }
 
         public void RefreshAutoPretzel()
