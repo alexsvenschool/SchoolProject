@@ -12,7 +12,8 @@ namespace PretzelClicker
     public partial class MainWindow : Window
     {
         SoundPlayer player = new SoundPlayer(@"Sounds/background_music.wav");//Background music
-        
+        SoundPlayer button_sound = new SoundPlayer(@"Sounds/ClickField.wav");//Button Sound
+
         Pretzel Pretzel = new Pretzel();
         PretzelUpdate PretzelUpdate = new PretzelUpdate();
         List<AutoClicker> lstAutoClicker = new List<AutoClicker>();
@@ -21,7 +22,6 @@ namespace PretzelClicker
         {
             InitializeComponent();
             player.Play();
-            player.Play();//Play the background music
             RefreshAutoPretzel();
             RefreshCosts();
         }
@@ -61,6 +61,7 @@ namespace PretzelClicker
 
         private void BtnClickField_Click(object sender, RoutedEventArgs e)
         {
+            button_sound.Play();
             lblPretzel.Content = PretzelUpdate.UpdatePretzelScore(Pretzel.Clicked());
         }//end BtnClickField_Click
 
